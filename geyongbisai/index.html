@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歌咏比赛方案-策划指南、执行流程与评分细则大全</title>
+    <meta name="description" content="本站提供详尽的歌咏比赛方案策划模板，包含活动主题构思、组织架构搭建、比赛流程设计、评分标准制定及应急预案。助您轻松举办一场高水准、规范有序的文艺活动。">
+    <meta name="keywords" content="歌咏比赛方案,活动策划,文艺汇演,评分标准,比赛流程">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --primary-dark: #b71c1c;
+            --secondary-color: #f5f5f5;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Grid System */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            background-color: #ffebee;
+            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .card-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: transform 0.2s;
+        }
+
+        .card-link:hover::after {
+            transform: translateX(3px);
+        }
+
+        /* Detailed Plan Section */
+        .plan-step {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 50px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .step-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .checklist {
+            background-color: #fafafa;
+            padding: 15px 20px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .checklist li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Score Table */
+        .score-table-wrapper {
+            overflow-x: auto;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #fafafa;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: #fff;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #eceff1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #b0bec5;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #37474f;
+            color: #78909c;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .plan-step {
+                flex-direction: column;
+            }
+
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>🎵</span> 活动策划通
+            </div>
+            <nav class="nav-links">
+                <a href="#overview" class="active">方案概览</a>
+                <a href="#process">执行流程</a>
+                <a href="#rules">评分标准</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#contact" class="btn-cta">获取定制方案</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>打造完美的歌咏比赛</h1>
+                <p>从创意策划到现场执行，为您提供全方位的标准化歌咏比赛方案模板，确保活动专业、有序、精彩。</p>
+                <div class="hero-tags">
+                    <span class="tag">全员参与</span>
+                    <span class="tag">企业年会</span>
+                    <span class="tag">校园艺术节</span>
+                    <span class="tag">社区文化</span>
+                    <span class="tag">红色主题</span>
+                </div>
+                <a href="#process" class="btn-cta" style="padding: 12px 30px; font-size: 1.1rem;">查看完整方案</a>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section id="overview" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>方案设计核心要素</h2>
+                    <p>一份成功的歌咏比赛方案需要涵盖活动定位、组织架构、流程设计及安全保障</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-icon">🎯</div>
+                            <h3 class="card-title">活动定位</h3>
+                            <p class="card-text">明确比赛性质（如：职工风采展示、校园爱国主义教育），设定主题方向，确保内容积极向上，符合受众审美。</p>
+                            <a href="#" class="card-link">查看主题库</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-icon">👥</div>
+                            <h3 class="card-title">组织架构</h3>
+                            <p class="card-text">成立组委会下设策划组、宣传组、后勤组及裁判组，明确各部门职责，避免现场推诿扯皮。</p>
+                            <a href="#" class="card-link">下载组织架构图</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-icon">📊</div>
+                            <h3 class="card-title">流程设计</h3>
+                            <p class="card-text">规划从报名、初审、彩排到正式演出的全流程节点，控制各环节时间，预留机动时间应对突发情况。</p>
+                            <a href="#" class="card-link">查看甘特图</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Process Section -->
+        <section id="process" class="section" style="background-color: var(--white);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>标准执行流程</h2>
+                    <p>遵循科学的时间管理，确保每个环节无缝衔接</p>
+                </div>
+
+                <div class="plan-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>前期筹备与策划</h3>
+                        <p>确定比赛时间、地点及参与对象。发布正式通知，设计宣传海报。完成场地勘察、音响设备调试及评委邀请。</p>
+                        <ul class="checklist">
+                            <li>发布活动通知与报名表</li>
+                            <li>确定参赛曲目及伴奏格式</li>
+                            <li>组建评审委员会</li>
+                            <li>制定详细的应急预案</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="plan-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>宣传推广与报名</h3>
+                        <p>利用内部邮件、公众号、宣传栏等多渠道进行宣传。收集参赛曲目清单，进行初步筛选，确认最终参赛名单。</p>
+                        <ul class="checklist">
+                            <li>收集并审核参赛曲目</li>
+                            <li>确认伴奏音乐及背景视频</li>
+                            <li>统计参赛人数及服装道具</li>
+                            <li>安排彩排时间表</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="plan-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>正式比赛与评审</h3>
+                        <p>比赛当日，工作人员提前到场进行设备调试。主持人开场，宣读规则。比赛进行时，评委现场打分，计分员实时统计。</p>
+                        <ul class="checklist">
+                            <li>签到与候场区管理</li>
+                            <li>现场灯光音响控制</li>
+                            <li>评委打分与分数统计</li>
+                            <li>现场观众秩序维护</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="plan-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>颁奖与总结</h3>
+                        <p>比赛结束，统计最终得分，宣布获奖名单。邀请领导颁奖。赛后进行活动复盘，整理影像资料归档。</p>
+                        <ul class="checklist">
+                            <li>宣布获奖结果</li>
+                            <li>领导致辞与合影留念</li>
+                            <li>清理场地与设备回收</li>
+                            <li>撰写活动总结报告</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scoring Rules Section -->
+        <section id="rules" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>评分标准细则</h2>
+                    <p>客观、公正、透明的评分体系是比赛公平性的保障</p>
+                </div>
+                <div class="score-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">评分项目</th>
+                                <th style="width: 60%;">评分标准</th>
+                                <th style="width: 20%;">分值占比</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>演唱技巧</strong></td>
+                                <td>音准、节奏准确，气息控制稳定，音色优美，无明显的破音或走调。吐字清晰，咬字准确。</td>
+                                <td>40分</td>
+                            </tr>
+                            <tr>
+                                <td><strong>舞台表现</strong></td>
+                                <td>精神饱满，台风端正。服装整洁得体，妆容适宜。动作大方自然，富有感染力。</td>
+                                <td>30分</td>
+                            </tr>
+                            <tr>
+                                <td><strong>歌曲处理</strong></td>
+                                <td>对歌曲情感理解深刻，能够准确传达歌曲意境。强弱处理得当，富有层次感。</td>
+                                <td>20分</td>
+                            </tr>
+                            <tr>
+                                <td><strong>整体效果</strong></td>
+                                <td>团队配合默契（合唱），整体氛围良好，与伴奏配合流畅，能给观众带来美的享受。</td>
+                                <td>10分</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="margin-top: 20px; text-align: right; color: var(--text-light); font-size: 0.9rem;">
+                    * 总分100分，保留小数点后两位，去掉一个最高分和一个最低分后取平均分。
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section" style="background-color: var(--white);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>为您解答在策划和执行歌咏比赛过程中遇到的疑难杂症</p>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <div class="faq-question">如何选择适合的参赛曲目？</div>
+                        <div class="faq-answer">
+                            <p>选择曲目应考虑以下几点：1. 符合比赛主题（如红色经典、流行正能量）；2. 适合表演者的音域和声部特点；3. 曲目时长控制在规定时间内；4. 最好能展现团队特色，避免过于大众化导致缺乏辨识度。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">伴奏音乐格式有什么要求？</div>
+                        <div class="faq-answer">
+                            <p>建议提交无损格式的MP3或WAV文件。文件命名规范为“参赛队号-曲目名称”，并在比赛前至少提前10分钟提交给音响师进行试放，确保无杂音、无破音。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如果遇到现场设备故障怎么办？</div>
+                        <div class="faq-answer">
+                            <p>应提前准备备用设备（如备用麦克风、备用音响系统）。在流程设计上，建议为每支队伍预留3-5分钟的机动时间。若发生突发故障，主持人应立即进行现场互动或串场，待设备修复后继续比赛。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">合唱比赛的站位有什么讲究？</div>
+                        <div class="faq-answer">
+                            <p>合唱站位通常采用“梯形”或“圆形”站位，保证各声部均衡。领唱通常位于舞台正前方或侧前方。指挥手势应清晰有力，起到统率全队的作用。站位需提前进行彩排，确保整齐划一。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #b0bec5; font-size: 0.9rem;">我们专注于提供高质量的活动策划与执行方案，致力于帮助各类组织机构成功举办每一场活动。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#overview">方案概览</a></li>
+                        <li><a href="#process">执行流程</a></li>
+                        <li><a href="#rules">评分标准</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：010-12345678</li>
+                        <li>邮箱：contact@eventplan.com</li>
+                        <li>地址：北京市朝阳区活动策划中心</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 歌咏比赛方案策划网. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentNode;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
