@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GTV电竞世界直播提供专业电竞赛事直播、游戏资讯、赛事数据及选手资料。涵盖英雄联盟、Dota2、CS:GO等热门项目，实时高清直播，社区互动。">
+    <meta name="keywords" content="gtv电竞世界直播,电竞直播,游戏直播,英雄联盟直播,Dota2直播,CS:GO直播,电竞赛事">
+    <title>GTV电竞世界直播 - 专业电竞赛事与游戏直播平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00f2ea;
+            --secondary-color: #ff0050;
+            --bg-dark: #0a0a0f;
+            --bg-card: #14141f;
+            --text-main: #ffffff;
+            --text-muted: #a0a0b0;
+            --border-color: #2a2a35;
+            --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .more-link {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .more-link:hover {
+            color: var(--text-main);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #00b8c2);
+            color: #000;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 242, 234, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: url('https://picsum.photos/seed/esports/1920/1080') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(10,10,15,0.95) 0%, rgba(10,10,15,0.6) 50%, rgba(10,10,15,0.2) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(255, 0, 80, 0.2);
+            color: var(--secondary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 0, 80, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #a0a0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(255, 0, 80, 0.15);
+            color: var(--secondary-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; box-shadow: 0 0 0 0 rgba(255, 0, 80, 0.7); }
+            70% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(255, 0, 80, 0); }
+            100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255, 0, 80, 0); }
+        }
+
+        /* Live Channels Grid */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .channel-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: var(--border-color);
+        }
+
+        .card-image {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .channel-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .live-status {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 2px;
+        }
+
+        .viewer-count {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .game-tag {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        /* Tournaments */
+        .tournament-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .tournament-card:hover {
+            background-color: #1a1a25;
+        }
+
+        .tournament-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(0, 242, 234, 0.1);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .tournament-info {
+            flex: 1;
+        }
+
+        .tournament-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .tournament-status {
+            font-size: 14px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: #2a2a35;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            width: 65%;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--bg-card);
+            border-radius: 8px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .feature-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050508;
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 14px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #1a1a25;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .tournament-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero {
+                height: 500px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                GTV<span>电竞世界</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">英雄联盟</a>
+                <a href="#">Dota 2</a>
+                <a href="#">CS:GO</a>
+                <a href="#">王者荣耀</a>
+                <a href="#">绝地求生</a>
+                <a href="#">资讯中心</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="live-badge">
+                <span class="live-dot"></span>
+                正在直播
+            </div>
+            <h1>2024 全球总决赛：巅峰对决</h1>
+            <p>见证荣耀时刻，感受电竞魅力。GTV电竞世界直播为您提供全程高清赛事转播，专业解说团队，实时数据统计，与百万玩家一同见证历史。</p>
+            <div style="display: flex; gap: 15px;">
+                <a href="#" class="btn btn-primary">立即观看</a>
+                <a href="#" class="btn btn-outline">观看回放</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Channels -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门直播</h2>
+                <a href="#" class="more-link">查看全部 ></a>
+            </div>
+            <div class="grid-layout">
+                <!-- Channel 1 -->
+                <article class="channel-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/lol1/400/250" alt="英雄联盟直播">
+                        <span class="live-status">LIVE</span>
+                        <span class="viewer-count">👁 12.5万</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">职业联赛春季赛：JDG vs T1</h3>
+                        <div class="card-meta">
+                            <span class="game-tag">英雄联盟</span>
+                            <span>GTV官方解说</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Channel 2 -->
+                <article class="channel-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/dota2/400/250" alt="Dota2直播">
+                        <span class="live-status">LIVE</span>
+                        <span class="viewer-count">👁 8.2万</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Major 赛事：LGD vs Secret</h3>
+                        <div class="card-meta">
+                            <span class="game-tag">Dota 2</span>
+                            <span>老杨直播间</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Channel 3 -->
+                <article class="channel-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/csgo/400/250" alt="CS:GO直播">
+                        <span class="live-status">LIVE</span>
+                        <span class="viewer-count">👁 3.1万</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">IEM 卡托维兹：NaVi vs FaZe</h3>
+                        <div class="card-meta">
+                            <span class="game-tag">CS:GO</span>
+                            <span>官方转播</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Channel 4 -->
+                <article class="channel-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/pubg/400/250" alt="绝地求生直播">
+                        <span class="live-status">LIVE</span>
+                        <span class="viewer-count">👁 1.8万</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">PGC 职业联赛：四排冲分赛</h3>
+                        <div class="card-meta">
+                            <span class="game-tag">绝地求生</span>
+                            <span>官方赛事</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Tournaments -->
+    <section class="section" style="background-color: #0f0f16;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">进行中的赛事</h2>
+                <a href="#" class="more-link">赛事日历 ></a>
+            </div>
+            <div class="grid-layout">
+                <!-- Tournament 1 -->
+                <div class="tournament-card">
+                    <div class="tournament-icon">🏆</div>
+                    <div class="tournament-info">
+                        <h3 class="tournament-name">S13 全球总决赛</h3>
+                        <div class="tournament-status">总决赛 · 正在进行</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary" style="padding: 6px 15px; font-size: 12px;">观看</a>
+                </div>
+                <!-- Tournament 2 -->
+                <div class="tournament-card">
+                    <div class="tournament-icon">🎮</div>
+                    <div class="tournament-info">
+                        <h3 class="tournament-name">DOTA2 国际邀请赛</h3>
+                        <div class="tournament-status">小组赛 · 第四日</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 30%;"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary" style="padding: 6px 15px; font-size: 12px;">观看</a>
+                </div>
+                <!-- Tournament 3 -->
+                <div class="tournament-card">
+                    <div class="tournament-icon">🎯</div>
+                    <div class="tournament-info">
+                        <h3 class="tournament-name">IEM 科隆站</h3>
+                        <div class="tournament-status">淘汰赛 · 1/4 决赛</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary" style="padding: 6px 15px; font-size: 12px;">观看</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">平台特色</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📡</div>
+                    <h4 class="feature-title">4K 超清直播</h4>
+                    <p class="feature-desc">支持多种清晰度切换，极致视听体验</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <h4 class="feature-title">实时数据</h4>
+                    <p class="feature-desc">秒级更新的赛事数据与战况分析</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💬</div>
+                    <h4 class="feature-title">弹幕互动</h4>
+                    <p class="feature-desc">百万弹幕实时互动，参与竞猜赢取奖励</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎁</div>
+                    <h4 class="feature-title">周边商城</h4>
+                    <p class="feature-desc">独家限定电竞周边，粉丝专属福利</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>GTV电竞世界</h3>
+                    <p>致力于打造最专业的电竞赛事直播平台，连接玩家与电竞梦想。关注我们，不错过每一场精彩对决。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏分类</h4>
+                    <ul>
+                        <li><a href="#">英雄联盟</a></li>
+                        <li><a href="#">Dota 2</a></li>
+                        <li><a href="#">CS:GO</a></li>
+                        <li><a href="#">Valorant</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">合作洽谈</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">账号安全</a></li>
+                        <li><a href="#">网络诊断</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GTV电竞世界直播 版权所有 | 本站内容仅供展示，非官方网站</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
