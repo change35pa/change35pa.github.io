@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="手工达人任务平台 - 提供创意手作教程、DIY材料包选购指南及手工艺人技能接单任务。专注手工制作技巧分享，助您轻松完成从入门到精通的手工达人之旅。">
+    <meta name="keywords" content="手工达人任务,手工制作教程,DIY材料包,手工艺人接单,手工DIY">
+    <title>手工达人任务-创意手作教程与技能接单平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8b5e3c;
+            --primary-light: #d4a373;
+            --secondary-color: #fefae0;
+            --text-main: #2c2c2c;
+            --text-secondary: #666;
+            --bg-body: #fdfbf7;
+            --bg-card: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(139, 94, 60, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            font-size: 32px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #7a4d31;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 94, 60, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbf7 0%, #f4e4bc 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            font-size: 16px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-light);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-main);
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Task Cards */
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .task-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .task-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-light);
+        }
+
+        .task-thumb {
+            width: 180px;
+            height: 120px;
+            border-radius: 8px;
+            background-color: #eee;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .task-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .task-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .task-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .tag.difficulty {
+            background-color: #f0f4f8;
+            color: #4a90e2;
+        }
+
+        .task-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .task-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .task-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .price {
+            color: #e74c3c;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-list li {
+            margin-bottom: 12px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .count {
+            background-color: #eee;
+            color: #666;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            margin-top: 50px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .guide-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .guide-img {
+            height: 160px;
+            background-color: #ddd;
+        }
+
+        .guide-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .guide-info {
+            padding: 20px;
+        }
+
+        .guide-info h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .guide-info p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 50px;
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: none;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary-light);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .task-card {
+                flex-direction: column;
+            }
+
+            .task-thumb {
+                width: 100%;
+                height: 180px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>✂️</span> 手工达人任务
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">热门任务</a></li>
+                    <li><a href="#">材料库</a></li>
+                    <li><a href="#">教程专区</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-primary">发布任务</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>释放创意，完成你的专属手工任务</h1>
+            <p>连接手工爱好者与创作者，海量DIY教程、材料包及技能接单任务，助你从零开始成为手工达人。</p>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="搜索手工项目、材料包或技能需求...">
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-grid">
+        <!-- 左侧内容区 -->
+        <section class="content-area">
+            
+            <!-- 最新任务 -->
+            <div class="section-header">
+                <h2 class="section-title">最新发布任务</h2>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+
+            <div class="task-list">
+                <!-- 任务卡片 1 -->
+                <article class="task-card">
+                    <div class="task-thumb">
+                        <img src="https://picsum.photos/seed/craft1/300/200" alt="羊毛毡玩偶制作">
+                    </div>
+                    <div class="task-content">
+                        <div>
+                            <div class="task-tags">
+                                <span class="tag">毛毡</span>
+                                <span class="tag difficulty">入门</span>
+                            </div>
+                            <h3 class="task-title">手工羊毛毡卡通小熊挂件定制（含材料包）</h3>
+                            <p class="task-desc">需要制作两个不同颜色的手工羊毛毡小熊，尺寸约10cm，需提供详细步骤图解，适合新手。</p>
+                        </div>
+                        <div class="task-meta">
+                            <span>截止：2023-11-20</span>
+                            <div class="price">¥ 50.00</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 任务卡片 2 -->
+                <article class="task-card">
+                    <div class="task-thumb">
+                        <img src="https://picsum.photos/seed/craft2/300/200" alt="旧物改造">
+                    </div>
+                    <div class="task-content">
+                        <div>
+                            <div class="task-tags">
+                                <span class="tag">旧物改造</span>
+                                <span class="tag difficulty">进阶</span>
+                            </div>
+                            <h3 class="task-title">复古风玻璃罐灯罩改造设计</h3>
+                            <p class="task-desc">提供旧玻璃罐的改造创意方案，包含电路设计与装饰风格建议，要求环保材料。</p>
+                        </div>
+                        <div class="task-meta">
+                            <span>截止：2023-11-22</span>
+                            <div class="price">¥ 200.00</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 任务卡片 3 -->
+                <article class="task-card">
+                    <div class="task-thumb">
+                        <img src="https://picsum.photos/seed/craft3/300/200" alt="编织">
+                    </div>
+                    <div class="task-content">
+                        <div>
+                            <div class="task-tags">
+                                <span class="tag">钩针编织</span>
+                                <span class="tag difficulty">中级</span>
+                            </div>
+                            <h3 class="task-title">儿童围巾/帽子编织教程绘制</h3>
+                            <p class="task-desc">绘制清晰的钩针编织步骤图，包含针法说明和配色建议，用于制作儿童冬季配饰。</p>
+                        </div>
+                        <div class="task-meta">
+                            <span>截止：2023-11-25</span>
+                            <div class="price">¥ 150.00</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- 技能提升指南 -->
+            <div class="section-header" style="margin-top: 50px;">
+                <h2 class="section-title">新手技能提升指南</h2>
+            </div>
+
+            <div class="guide-grid">
+                <article class="guide-card">
+                    <div class="guide-img">
+                        <img src="https://picsum.photos/seed/needle/400/300" alt="基础针法">
+                    </div>
+                    <div class="guide-info">
+                        <h3>基础针法详解：从零开始学编织</h3>
+                        <p>详细介绍平针、反针、加针等基础技巧，附视频演示链接。</p>
+                    </div>
+                </article>
+                <article class="guide-card">
+                    <div class="guide-img">
+                        <img src="https://picsum.photos/seed/glue/400/300" alt="胶水使用">
+                    </div>
+                    <div class="guide-info">
+                        <h3>手工制作中的胶水选择与使用技巧</h3>
+                        <p>如何根据不同材质（布料、纸张、木材）选择最适合的胶水。</p>
+                    </div>
+                </article>
+                <article class="guide-card">
+                    <div class="guide-img">
+                        <img src="https://picsum.photos/seed/paint/400/300" alt="颜料调配">
+                    </div>
+                    <div class="guide-info">
+                        <h3>丙烯颜料调色基础与保存方法</h3>
+                        <p>掌握色彩混合比例，让作品色彩更自然，颜料不易干涸。</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- 常见问题 -->
+            <div class="faq-section">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题解答</h2>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">如何发布一个手工任务？</div>
+                    <div class="faq-answer">点击页面右上角的“发布任务”按钮，填写任务标题、描述、截止时间、预算金额以及所需的技能类型即可。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">新手可以接手什么类型的任务？</div>
+                    <div class="faq-answer">新手建议从“入门”或“初级”标签的任务开始，例如简单的折纸、基础拼贴或简单的刺绣教程绘制。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">支付安全如何保障？</div>
+                    <div class="faq-answer">平台提供担保交易服务，资金在您确认收到满意的成品或服务前不会支付给对方，确保双方权益。</div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 右侧侧边栏 -->
+        <aside class="sidebar">
+            <!-- 推荐分类 -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">热门分类</h3>
+                <ul class="category-list">
+                    <li><a href="#">刺绣/缝纫 <span class="count">120</span></a></li>
+                    <li><a href="#">编织/钩针 <span class="count">85</span></a></li>
+                    <li><a href="#">折纸/纸艺 <span class="count">65</span></a></li>
+                    <li><a href="#">粘土/软陶 <span class="count">92</span></a></li>
+                    <li><a href="#">木工/雕刻 <span class="count">40</span></a></li>
+                    <li><a href="#">旧物改造 <span class="count">78</span></a></li>
+                </ul>
+            </div>
+
+            <!-- 热门材料包 -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">精选材料包</h3>
+                <div style="margin-bottom: 15px;">
+                    <div style="display:flex; gap:10px; margin-bottom:10px;">
+                        <img src="https://picsum.photos/seed/kit1/80/80" style="border-radius:4px; width:80px; height:80px; object-fit:cover;">
+                        <div>
+                            <div style="font-size:14px; font-weight:600;">日系风串珠手链套装</div>
+                            <div style="color:#e74c3c; font-size:14px; font-weight:700;">¥ 29.9</div>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:10px; margin-bottom:10px;">
+                        <img src="https://picsum.photos/seed/kit2/80/80" style="border-radius:4px; width:80px; height:80px; object-fit:cover;">
+                        <div>
+                            <div style="font-size:14px; font-weight:600;">北欧风羊毛毡公仔</div>
+                            <div style="color:#e74c3c; font-size:14px; font-weight:700;">¥ 45.0</div>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:10px;">
+                        <img src="https://picsum.photos/seed/kit3/80/80" style="border-radius:4px; width:80px; height:80px; object-fit:cover;">
+                        <div>
+                            <div style="font-size:14px; font-weight:600;">手工皂基础原料包</div>
+                            <div style="color:#e74c3c; font-size:14px; font-weight:700;">¥ 35.5</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="view-all" style="font-size:13px;">浏览全部材料包 &rarr;</a>
+            </div>
+
+            <!-- 广告位占位 -->
+            <div class="sidebar-card" style="background: #fff8e1; text-align: center; padding: 30px 20px;">
+                <h3 style="color: #b7791f; margin-bottom: 10px;">加入手工达人社群</h3>
+                <p style="font-size: 13px; color: #92400e; margin-bottom: 15px;">获取最新教程，与大师交流经验。</p>
+                <button class="btn-primary" style="width: 100%; padding: 10px; font-size: 14px;">立即扫码加入</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 13px; line-height: 1.8;">手工达人任务是一个专注于手工艺交流与技能交易的平台。我们致力于连接有创意的创作者与有需求的手工爱好者，提供从材料到成品的全流程服务。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">发布任务</a></li>
+                        <li><a href="#">寻找帮手</a></li>
+                        <li><a href="#">新手教程</a></li>
+                        <li><a href="#">社区论坛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">任务发布规则</a></li>
+                        <li><a href="#">支付安全说明</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 手工达人任务网. All Rights Reserved. 保留所有权利.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', function() {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                  </html>
