@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="大龄小伙找陪床保姆服务指南，提供专业的陪护人员信息、服务流程、注意事项及法律法规解读，帮助用户安全、合规地寻找合适的护理服务。">
+    <meta name="keywords" content="大龄小伙找陪床保姆,陪床保姆,护工,养老护理,居家陪护,家政服务">
+    <title>大龄小伙找陪床保姆-专业陪护服务与安全指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --light-text: #666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: inline-flex;
+            gap: 10px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .search-box button {
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* Services Grid */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--light-text);
+        }
+
+        .services {
+            padding: 80px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* Guide Section */
+        .guide {
+            background-color: white;
+            padding: 80px 0;
+        }
+
+        .guide-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .guide-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .guide-text ul {
+            margin-top: 30px;
+        }
+
+        .guide-text li {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .guide-text li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .guide-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f0f4f8;
+            border-radius: var(--border-radius);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+            font-weight: 500;
+        }
+
+        /* Safety & Legal */
+        .safety {
+            padding: 80px 0;
+            background-color: #fff3e0;
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .safety-item {
+            background: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+
+        .safety-item strong {
+            display: block;
+            color: #d35400;
+            margin-bottom: 10px;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--light-text);
+            display: none;
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .search-box {
+                flex-direction: column;
+            }
+            .search-box button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
+                <span>护康</span>无忧
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#services">服务类型</a></li>
+                    <li><a href="#guide">找护工指南</a></li>
+                    <li><a href="#safety">安全须知</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">联系客服</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>大龄小伙找陪床保姆<br>专业照护与安全指南</h1>
+                <p>针对高龄、术后或行动不便人群的陪护需求，提供正规机构推荐、保姆筛选标准及法律权益保障建议。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="输入您的需求（如：术后护理、失能老人）...">
+                    <button type="button">搜索护工</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见陪护服务类型</h2>
+                    <p>根据身体状况选择最合适的护理模式</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-icon">🏥</div>
+                        <h3>术后陪护</h3>
+                        <p>针对大手术患者，提供术后伤口观察、用药提醒、协助翻身及基础生活照料，帮助患者平稳度过康复期。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🦽</div>
+                        <h3>失能/半失能照护</h3>
+                        <p>针对瘫痪、肢体残疾或严重行动不便的人群，提供24小时陪床，协助洗漱、进食、如厕及肢体康复训练。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🤒</div>
+                        <h3>慢性病管理</h3>
+                        <p>针对高血压、糖尿病等慢性病患者，提供日常健康监测、饮食控制建议及异常情况及时通知家属。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="guide" id="guide">
+            <div class="container">
+                <div class="guide-content">
+                    <div class="guide-text">
+                        <h2>如何正规寻找合适的陪床保姆</h2>
+                        <p>“大龄小伙找陪床保姆”不仅仅是寻找一个劳动力，更是寻找一位可以信任的健康守护者。为了确保服务质量，建议遵循以下步骤：</p>
+                        <ul>
+                            <li><strong>明确需求与预算：</strong> 确定是全天陪护还是白班，以及是否需要具备医疗护理技能（如导尿、吸痰等）。</li>
+                            <li><strong>选择正规渠道：</strong> 建议通过正规家政公司、医院护工站或信誉良好的社区服务中介，避免私下交易带来的风险。</li>
+                            <li><strong>严格背景审查：</strong> 了解护工的健康证明、无犯罪记录证明及过往客户评价。对于重点关注的岗位，可要求提供健康体检报告。</li>
+                            <li><strong>签订服务协议：</strong> 明确服务内容、薪资待遇、工作时长及违约责任，最好有书面合同或正规收据。</li>
+                        </ul>
+                    </div>
+                    <div class="guide-image">
+                        <div style="text-align:center;">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#3498db" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:15px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <p>专业培训<br>持证上岗</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="safety" id="safety">
+            <div class="container">
+                <div class="section-title">
+                    <h2>安全与法律风险防范</h2>
+                </div>
+                <div class="safety-grid">
+                    <div class="safety-item">
+                        <strong>人身财产安全</strong>
+                        <p>定期检查家中门窗锁具，贵重物品妥善保管。建议在护工工作期间保持家中有人或视频连线。</p>
+                    </div>
+                    <div class="safety-item">
+                        <strong>医疗安全红线</strong>
+                        <p>护工无权擅自更改处方药物或进行有创医疗操作。如遇突发状况，必须立即联系医生或家属。</p>
+                    </div>
+                    <div class="safety-item">
+                        <strong>合同与纠纷</strong>
+                        <p>明确薪资发放周期，避免口头约定。如发生纠纷，应保留沟通记录并寻求行业协会或法律援助。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">大龄小伙找陪床保姆，一般需要具备什么条件？</div>
+                    <div class="faq-answer">陪床保姆通常需要身体健康、无传染性疾病，具备基本的沟通能力和生活照料技能。如果是医疗护理需求，最好选择经过专业培训、有医院护工经验的人员。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">陪床保姆和住家保姆有什么区别？</div>
+                    <div class="faq-answer">陪床保姆主要工作是在患者床边进行24小时或长时间护理，侧重于医疗辅助和生活协助；住家保姆主要负责家庭日常家务和老人/小孩的照料，工作场景不同。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何判断陪床保姆是否专业？</div>
+                    <div class="faq-answer">可以通过查看其健康证、护理员资格证等证件；观察其操作手法是否规范（如翻身拍背、协助进食）；以及询问其过往服务案例和客户评价。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">我们致力于为有需要的家庭提供安全、可靠的陪护服务信息与指南，保障每一位患者的合法权益。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>服务指南</h4>
+                    <ul>
+                        <li><a href="#">找护工流程</a></li>
+                        <li><a href="#">费用标准</a></li>
+                        <li><a href="#">护工培训</a></li>
+                        <li><a href="#">安全协议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：service@example.com</li>
+                        <li>地址：XX市XX区服务大厅</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 护康无忧服务平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 简单的搜索按钮交互
+            const searchBtn = document.querySelector('.search-box button');
+            const searchInput = document.querySelector('.search-box input');
+            
+            searchBtn.addEventListener('click', () => {
+                const val = searchInput.value;
+                if(val) {
+                    alert('正在为您筛选符合条件的陪护人员：' + val);
+                } else {
+                    alert('请输入您的需求描述');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
