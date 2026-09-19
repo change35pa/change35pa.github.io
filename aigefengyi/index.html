@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="艾格风衣专题页 - 提供艾格经典风衣款式解析、穿搭指南、四季搭配建议及艾格风衣选购注意事项。了解艾格风衣的历史底蕴与时尚魅力。">
+    <meta name="keywords" content="艾格风衣,艾格外套,风衣推荐,经典风衣,艾格穿搭">
+    <title>艾格风衣-经典款式解析与四季穿搭指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #d4a373;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --light-text: #666;
+            --white: #ffffff;
+            --border-color: #e1e1e1;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            color: var(--light-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            height: var(--header-height);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .category-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .cat-img {
+            height: 200px;
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        .cat-content {
+            padding: 25px;
+        }
+
+        .cat-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .cat-content p {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+
+        .cat-link {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .cat-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .cat-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Features/Details */
+        .features {
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            padding: 0 10px;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: #f4f4f4;
+        }
+
+        .guide-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .guide-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .guide-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .guide-list li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .guide-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .guide-content {
+                flex-direction: column;
+            }
+            
+            .guide-image {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">EGO FASHION</a>
+            <nav class="nav-links">
+                <a href="#classic">经典款式</a>
+                <a href="#guide">穿搭指南</a>
+                <a href="#fabric">面料工艺</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索艾格风衣的优雅与实用</h1>
+                <p>从经典双排扣到现代剪裁，深入了解艾格风衣的设计美学、面料选择及四季穿搭技巧，打造属于你的摩登形象。</p>
+                <a href="#guide" class="cta-button">开始阅读指南</a>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="classic" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门款式分类</h2>
+                    <p>根据不同场合与体型，选择最适合您的艾格风衣款式。</p>
+                </div>
+                <div class="category-grid">
+                    <article class="category-card">
+                        <img src="https://picsum.photos/seed/egoshirt/400/300" alt="衬衫风衣" class="cat-img">
+                        <div class="cat-content">
+                            <h3>衬衫风衣</h3>
+                            <p>融合衬衫与风衣的优点，兼具干练与休闲，适合春秋通勤。</p>
+                            <a href="#" class="cat-link">查看详情</a>
+                        </div>
+                    </article>
+                    <article class="category-card">
+                        <img src="https://picsum.photos/seed/egodouble/400/300" alt="双排扣风衣" class="cat-img">
+                        <div class="cat-content">
+                            <h3>经典双排扣</h3>
+                            <p>复古优雅的设计，硬挺的肩部线条，打造英伦绅士风范。</p>
+                            <a href="#" class="cat-link">查看详情</a>
+                        </div>
+                    </article>
+                    <article class="category-card">
+                        <img src="https://picsum.photos/seed/egoemb/400/300" alt="灯芯绒风衣" class="cat-img">
+                        <div class="cat-content">
+                            <h3>灯芯绒风衣</h3>
+                            <p>温暖舒适，质感独特，深秋初冬的绝佳保暖选择。</p>
+                            <a href="#" class="cat-link">查看详情</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i>✦</i>
+                        <h4>优质面料</h4>
+                        <p>精选高支棉混纺，透气防风，耐磨抗皱。</p>
+                    </div>
+                    <div class="feature-item">
+                        <i>✦</i>
+                        <h4>精准剪裁</h4>
+                        <p>人体工学设计，修饰身形，活动自如。</p>
+                    </div>
+                    <div class="feature-item">
+                        <i>✦</i>
+                        <h4>经典配色</h4>
+                        <p>卡其、米白、海军蓝，百搭不挑人。</p>
+                    </div>
+                    <div class="feature-item">
+                        <i>✦</i>
+                        <h4>实用细节</h4>
+                        <p>多功能口袋、可调节腰带、防雨涂层。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="section guide-section">
+            <div class="container">
+                <div class="guide-content">
+                    <div class="guide-text">
+                        <h3>如何挑选与搭配艾格风衣？</h3>
+                        <p style="margin-bottom: 20px; color: #555;">风衣不仅是防风工具，更是提升衣品的关键单品。掌握以下要点，让您的风衣穿搭更加出彩。</p>
+                        <ul class="guide-list">
+                            <li><strong>版型选择：</strong>梨形身材适合A字版型，苹果型身材适合直筒或收腰版型。</li>
+                            <li><strong>长度考量：</strong>小个子建议选择及膝或过膝长度，避免拖地；高挑身材可尝试长款风衣。</li>
+                            <li><strong>内搭建议：</strong>春季搭配T恤或衬衫，秋季搭配高领毛衣，冬季可作为大衣内搭。</li>
+                            <li><strong>色彩搭配：</strong>浅色风衣内搭深色下装更显利落，深色风衣内搭浅色则增加层次感。</li>
+                        </ul>
+                    </div>
+                    <div class="guide-image">
+                        <img src="https://picsum.photos/seed/fashionmodel/600/400" alt="艾格风衣穿搭示范">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>选购常见问题</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <span class="faq-question">艾格风衣容易起皱吗？</span>
+                        <p class="faq-answer">高品质的艾格风衣采用高支棉混纺面料，具有一定的抗皱性。日常穿着不易起皱，建议悬挂存放，如需熨烫请使用蒸汽熨斗。</p>
+                    </div>
+                    <div class="faq-item">
+                        <span class="faq-question">风衣的尺码如何选择？</span>
+                        <p class="faq-answer">建议参考具体的尺码表。由于风衣通常含有面料缩水率，购买前请确认衣长和胸围数据。如果不确定，建议咨询客服。</p>
+                    </div>
+                    <div class="faq-item">
+                        <span class="faq-question">风衣适合什么季节穿着？</span>
+                        <p class="faq-answer">风衣主要适合春秋季节，但在寒冷地区或冬季，选择内衬加厚或加绒的款式，也可作为防风外搭穿着。</p>
+                    </div>
+                    <div class="faq-item">
+                        <span class="faq-question">如何清洗艾格风衣？</span>
+                        <p class="faq-answer">大多数风衣建议干洗，以保持面料的手感和形状。部分可水洗的款式请使用冷水轻柔洗涤，避免暴晒。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于艾格</h4>
+                    <ul>
+                        <li><a href="#">品牌历史</a></li>
+                        <li><a href="#">设计理念</a></li>
+                        <li><a href="#">可持续发展</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>款式分类</h4>
+                    <ul>
+                        <li><a href="#">经典款</a></li>
+                        <li><a href="#">新款系列</a></li>
+                        <li><a href="#">设计师联名</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>客户服务</h4>
+                    <ul>
+                        <li><a href="#">尺码指南</a></li>
+                        <li><a href="#">退换货政策</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">小红书穿搭</a></li>
+                        <li><a href="#">官方微博</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 EGO Fashion Style Guide. All Rights Reserved. 本页面为时尚穿搭指南，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
