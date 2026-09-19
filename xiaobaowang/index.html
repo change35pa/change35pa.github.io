@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="小宝网 - 专业儿童成长支持平台，提供育儿知识、儿童心理辅导、亲子互动指南及教育资源推荐，助力家长科学育儿，陪伴孩子健康成长。">
+    <meta name="keywords" content="小宝网,儿童成长,育儿知识,亲子互动,儿童教育,育儿指南">
+    <title>小宝网-专业儿童成长支持与育儿知识指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #FF9F43;
+            --bg-color: #F7F9FC;
+            --card-bg: #FFFFFF;
+            --text-main: #2C3E50;
+            --text-light: #7F8C8D;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+        }
+
+        .cta-btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 5px;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.15);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .search-box button:hover {
+            background-color: #357ABD;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(74, 144, 226, 0.2);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #EBF5FF;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Categories Section */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .category-item:hover {
+            box-shadow: var(--shadow);
+            color: var(--primary-color);
+        }
+
+        .category-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .category-item p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Articles List */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .article-img {
+            height: 200px;
+            background-color: #ddd;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 25px;
+        }
+
+        .article-tag {
+            background-color: #FFF3E0;
+            color: var(--secondary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .article-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #BDC3C7;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        /* Interactive Tool Section */
+        .tool-section {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+        }
+
+        .tool-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .tool-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .tool-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .tool-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: #F8F9FA;
+            padding: 30px;
+            border-radius: var(--border-radius);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-group select:focus {
+            border-color: var(--primary-color);
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #E8F5E9;
+            border-radius: 8px;
+            color: #2E7D32;
+            display: none;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C3E50;
+            color: #ECF0F1;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #BDC3C7;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #95A5A6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                display: none; /* Simple hiding for mobile, ideally hamburger menu */
+            }
+
+            .nav-container {
+                justify-content: center;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                <span>小宝网</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#knowledge">育儿知识</a></li>
+                    <li><a href="#categories">分类资源</a></li>
+                    <li><a href="#tools">成长测评</a></li>
+                    <li><a href="#community">社区互动</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">专家咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>陪伴孩子快乐成长，科学育儿从这里开始</h1>
+                <p>小宝网为您提供全方位的儿童成长支持，涵盖营养健康、心理发展、早期教育及亲子互动指南。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索育儿问题、儿童疾病、成长阶段...">
+                    <button type="button">搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section">
+            <div class="container">
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>育儿百科</h3>
+                        <p>权威专家团队编写的育儿指南，涵盖0-12岁各阶段成长特点与科学养育建议。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>心理辅导</h3>
+                        <p>关注儿童心理健康，提供情绪管理、行为引导及亲子沟通技巧的专业指导。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🥗</div>
+                        <h3>营养膳食</h3>
+                        <p>科学食谱推荐与营养分析，帮助家长为孩子制定均衡、健康的饮食计划。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>安全防护</h3>
+                        <p>提供居家安全、出行防护及常见意外伤害的预防与急救处理知识。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="section" style="background-color: white;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门分类</h2>
+                    <p>快速找到您关心的育儿话题</p>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-item">
+                        <h4>婴幼儿护理</h4>
+                        <p>新生儿护理、喂养指导</p>
+                    </div>
+                    <div class="category-item">
+                        <h4>幼儿教育</h4>
+                        <p>启蒙、游戏、习惯养成</p>
+                    </div>
+                    <div class="category-item">
+                        <h4>学龄儿童</h4>
+                        <p>学习规划、同伴关系</p>
+                    </div>
+                    <div class="category-item">
+                        <h4>亲子活动</h4>
+                        <p>周末出游、手工DIY</p>
+                    </div>
+                    <div class="category-item">
+                        <h4>营养食谱</h4>
+                        <p>辅食添加、儿童餐单</p>
+                    </div>
+                    <div class="category-item">
+                        <h4>健康医疗</h4>
+                        <p>疫苗接种、常见疾病</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Articles Section -->
+        <section id="knowledge" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>最新育儿资讯</h2>
+                    <p>分享实用的育儿经验与专家观点</p>
+                </div>
+                <div class="articles-grid">
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/kid1/400/250" alt="幼儿睡眠" class="article-img">
+                        <div class="article-content">
+                            <span class="article-tag">睡眠管理</span>
+                            <h3 class="article-title">如何帮助宝宝建立规律的睡眠作息？</h3>
+                            <p class="article-excerpt">良好的睡眠对幼儿大脑发育至关重要。本文将分享建立睡前仪式和改善睡眠质量的实用方法。</p>
+                            <div class="article-meta">
+                                <span>2023-10-24</span>
+                                <span>阅读 1.2k</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/kid2/400/250" alt="专注力培养" class="article-img">
+                        <div class="article-content">
+                            <span class="article-tag">教育心理</span>
+                            <h3 class="article-title">培养孩子专注力的5个实用小技巧</h3>
+                            <p class="article-excerpt">专注力是孩子学习的基础。通过游戏和日常引导，可以有效提升孩子的注意力持续时间。</p>
+                            <div class="article-meta">
+                                <span>2023-10-22</span>
+                                <span>阅读 2.5k</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/kid3/400/250" alt="健康饮食" class="article-img">
+                        <div class="article-content">
+                            <span class="article-tag">营养健康</span>
+                            <h3 class="article-title">儿童挑食怎么办？营养师推荐策略</h3>
+                            <p class="article-excerpt">面对挑食的孩子，家长不必焦虑。通过色彩搭配、游戏化进食等策略，让孩子爱上蔬菜。</p>
+                            <div class="article-meta">
+                                <span>2023-10-20</span>
+                                <span>阅读 890</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Tool Section -->
+        <section id="tools" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>成长发育自测工具</h2>
+                    <p>了解孩子当前的发展水平，及时提供支持</p>
+                </div>
+                <div class="tool-section">
+                    <div class="tool-container">
+                        <div class="tool-info">
+                            <h3>2-3岁儿童语言能力自测</h3>
+                            <p style="margin-bottom: 20px; color: var(--text-light);">
+                                语言发展是儿童认知发展的重要指标。通过以下简单问题，您可以初步评估孩子的语言表达能力。
+                            </p>
+                            <ul style="color: var(--text-main);">
+                                <li>✅ 能说出自己的名字和年龄</li>
+                                <li>✅ 能听懂简单的指令</li>
+                                <li>✅ 能使用简单的句子（3-4个字）</li>
+                                <li>✅ 能模仿大人的语言交流</li>
+                            </ul>
+                        </div>
+                        <div class="tool-form">
+                            <div class="form-group">
+                                <label for="age">孩子年龄：</label>
+                                <select id="age">
+                                    <option value="2">2岁</option>
+                                    <option value="3" selected>3岁</option>
+                                    <option value="4">4岁</option>
+                                    <option value="5">5岁</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="score">评分（1-5分，5分为优秀）：</label>
+                                <input type="number" id="score" min="1" max="5" value="3">
+                            </div>
+                            <button type="button" class="cta-btn" style="width: 100%;" onclick="checkGrowth()">生成评估报告</button>
+                            <div id="result" class="result-box"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" style="background-color: white;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>解答家长在育儿过程中遇到的困惑</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">❓ 孩子总是喜欢看电视，如何控制时间？</div>
+                        <div class="faq-answer">建议家长与孩子共同制定观看规则，例如“每天只看30分钟”，并选择高质量的动画片。同时，多安排户外活动和亲子阅读，转移孩子的注意力。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">❓ 孩子不愿意去幼儿园怎么办？</div>
+                        <div class="faq-answer">分离焦虑是正常现象。家长应保持积极的态度，多与孩子谈论幼儿园的有趣之处，送园时果断告别，不要偷偷溜走，以免增加孩子的恐惧感。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">❓ 3岁孩子还不会说话，需要看医生吗？</div>
+                        <div class="faq-answer">每个孩子的发育节奏不同。如果孩子对呼唤没有反应，或无法用肢体表达需求，建议咨询儿科医生或语言治疗师进行评估。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">❓ 如何判断孩子是否缺钙？</div>
+                        <div class="faq-answer">缺钙的早期症状包括夜惊、多汗、枕秃等。建议定期带孩子进行体检，并在医生指导下补充钙剂和维生素D。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                        <span style="color: white;">小宝网</span>
+                    </div>
+                    <p style="color: #BDC3C7; font-size: 0.9rem;">
+                        小宝网致力于为全国家长提供科学、专业的育儿支持服务，关注儿童身心健康，助力家庭和谐幸福。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">育儿百科</a></li>
+                        <li><a href="#">成长测评</a></li>
+                        <li><a href="#">专家问答</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门话题</h4>
+                    <ul>
+                        <li><a href="#">辅食添加</a></li>
+                        <li><a href="#">睡眠训练</a></li>
+                        <li><a href="#">行为纠正</a></li>
+                        <li><a href="#">入园准备</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">合作投稿</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">用户协议</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 小宝网 版权所有 | 仅供演示参考</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function checkGrowth() {
+            const age = document.getElementById('age').value;
+            const score = document.getElementById('score').value;
+            const resultBox = document.getElementById('result');
+            
+            let advice = "";
+            let color = "";
+
+            if (score >= 4) {
+                advice = "恭喜您，孩子的语言能力表现优异。建议多鼓励孩子进行复杂的对话和故事讲述，可以尝试引入外语启蒙，保持其良好的语言习惯。";
+                color = "#2E7D32"; // Green
+            } else if (score >= 3) {
+                advice = "孩子的语言能力处于正常发展水平。建议在日常生活中多与孩子交流，阅读绘本，并鼓励孩子表达自己的想法和需求。";
+                color = "#1976D2"; // Blue
+            } else {
+                advice = "建议家长多与孩子进行语言互动，减少电子产品的使用，多带孩子接触大自然和社会环境。如持续未见改善，请咨询专业医生。";
+                color = "#D32F2F"; // Red
+            }
+
+            resultBox.style.display = 'block';
+            resultBox.style.backgroundColor = '#F0F8FF';
+            resultBox.style.color = color;
+            resultBox.innerHTML = `<strong>评估结果：</strong><br>${advice}`;
+        }
+    </script>
+</body>
+                          </html>
